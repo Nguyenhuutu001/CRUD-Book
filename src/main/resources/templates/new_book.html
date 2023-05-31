@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title> New Book </title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+</head>
+<body>
+<div class="row">
+		&nbsp;&nbsp;&nbsp;&nbsp;<h1 NEW BOOK></h1>
+	</div>
+	<form action="#" th:object="${book}" th:action="@{/savebook}" 
+			th:method="POST">
+			
+			Tiêu đề: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tác giả: 
+			<div class="input-group-prepend">
+			<input  type="text"  th:field="*{title}" class="form-control mb-4 col-2"  required placeholder="Tiêu đề"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input   type="text" th:field="*{author}" class="form-control mb-4 col-2"  required placeholder="Tác giả">
+			</div>
+			Mô tả về sách: <input   type="text" th:field="*{description}" class="form-control mb-4 col-5 "  required placeholder="Mô tả">
+			Ngày phát hành: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Số trang: 
+			<div class="input-group-prepend">
+			<input   type="text" th:field="*{release_date}" class="form-control mb-4 col-2"  required placeholder="Ngày phát hành">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input   type="text" th:field="*{num_page}" class="form-control mb-4 col-2"  required placeholder="Số trang">
+			</div>
+			Thể loại: <br><select  th:value="${book.category}"  required >
+			<option>Viễn tưởng</option>
+			<option>Lãnh mạn</option>
+			<option>Trinh thám</option>
+			<option>Kinh dị</option>
+			</select><br><br>
+				
+				
+				<button  type="submit" class="btn btn-info col-2" > Add </button>
+		</form>
+	
+		
+
+	</div>
+
+</body>
+</html>
